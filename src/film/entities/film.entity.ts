@@ -6,7 +6,7 @@ export class Film implements Prisma.FilmUncheckedCreateInput {
   id?: number;
   nom: string;
   resume: string;
-  categorie: string;
+  categorie:  string | any;
   duree: string;
   realisateur: string | null;
   acteur_principal: string | null;
@@ -19,7 +19,8 @@ export class Film implements Prisma.FilmUncheckedCreateInput {
     this.id = data.id;
     this.nom = data.nom;
     this.resume = data.resume;
-    this.categorie = data.categorie;
+    this.categorie = Array.isArray(data.categorie) ? data.categorie : [data.categorie]; // Mise à jour ici
+ 
     this.duree = data.duree;
     this.realisateur = data.realisateur || null;
     this.acteur_principal = data.acteur_principal || null;

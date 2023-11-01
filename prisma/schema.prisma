@@ -39,16 +39,16 @@ model Seance {
 
 model Film {
   id Int @id @default(autoincrement())
-  nom String
-  resume String
-  categorie String
-  duree String
-  realisateur String 
-  acteur_principal String
+  nom String?
+  resume String?
+  categorie String[]
+  duree String?
+  realisateur String? 
+  acteur_principal String?
 
   seances Seance[]
   updatedAt DateTime @updatedAt
-  createdAt DateTime @default(now()) 
+  createdAt DateTime @default(now())
 
   imageUrl String?
   imageCloudinaryPublicId  String?

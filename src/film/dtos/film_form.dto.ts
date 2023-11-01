@@ -17,7 +17,7 @@ export class FilmFormDto {
 
   @IsString()
   @IsNotEmpty()
-  @MinLength(2)
+  //@MinLength(2)
   duree
 
   @IsString()
